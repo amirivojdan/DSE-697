@@ -1,7 +1,7 @@
 
 # Zero-Shot Detection and Action Recognition of Broiler Chickens Using Vision-Language Models
 
-This repository presents the **final project for DSE 697 - Large Language Modeling & Gen AI**. The project explores the **zero-shot capabilities of state-of-the-art Vision-Language Models (VLMs)** to detect and recognize the actions of broiler chickens using only natural language queries—without any task-specific training.
+This repository presents the **final project for DSE 697 - Large Language Modeling & Gen AI**. The project explores the **zero-shot capabilities of state-of-the-art Vision-Language Models (VLMs)** to detect and recognize the actions of broiler chickens using only natural language queries-without any task-specific training.
 
 ---
 
@@ -45,7 +45,7 @@ unzip ChickenVerse4.zip -d ./ChickenVerse4
 
 ## Models Evaluated
 
-### 🔍 Zero-Shot Object Detection
+###  Zero-Shot Object Detection
 - **Grounding DINO** (`IDEA-Research/grounding-dino-tiny`)
 - **OWL-ViT** (`google/owlvit-base-patch32`)
 - **OWL-ViT v2** (`google/owlv2-base-patch16-ensemble`)
@@ -117,6 +117,44 @@ This script will:
 - Use one-shot learning or hybrid models for VQA
 - Expand dataset with more behavior diversity and examples
 
+
 ---
 
-For questions or collaboration inquiries, feel free to reach out. 🧑‍🔬
+##  Running VQA Classification (Ollama)
+
+To try the Visual Question Answering (VQA) classification task, follow these steps:
+
+### 1. Install Ollama
+
+Visit [https://ollama.com](https://ollama.com) and install Ollama for your platform (macOS, Windows, Linux).
+
+### 2. Pull Required Models
+
+Make sure you have pulled the following models using:
+
+```bash
+ollama pull gemma:7b
+ollama pull gemma:4b
+ollama pull llava:13b
+ollama pull llava:7b
+ollama pull minicmp
+```
+
+### 3. Run the Notebook
+
+Activate the same environment used earlier and launch the Jupyter notebook:
+
+```bash
+jupyter notebook VQA_classification.ipynb
+```
+
+This notebook uses the ChickenVerse4 dataset and prompts each model with a zero-shot VQA question like:
+
+> *"What is the chicken doing in the image? (drinking, feeding, preening, wingflapping)"*
+
+The responses are evaluated against the ground truth labels.
+
+
+---
+
+For questions or collaboration inquiries, feel free to reach out. 
